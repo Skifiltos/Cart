@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
         // IIFE (funzione invocata ed eseguita non appena dichiarata)
         (async () => {
             dispatch({
-                // varia lo state di isLoading in true qualora fosse false
+                // VARIA LO STATE DI ISLOADING IN TRUE QUALORA FOSSE FALSE
                 type: DATA_FETCHING_STARTED
             })
             try {

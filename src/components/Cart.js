@@ -1,19 +1,10 @@
 import React from "react";
-import products from "../products";
 import CartItem from "./CartItem";
 import { MdRemoveShoppingCart } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
 
 const Cart = () => {
-  const { products: prodotti } = useGlobalContext();
-
-  if (prodotti.length === 0) {
-    return (
-      <section className="cart-info">
-        <h6>Carrello vuoto</h6>
-      </section>
-    )
-  }
+  const { products } = useGlobalContext();
 
   return (
     <section className="section-center" style={{ marginTop: "2rem" }} >
