@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
-    // DATA FETCHING STARTED
+    // DATA FETCHING STARTED 
     useEffect(() => {
         // IIFE (funzione invocata ed eseguita non appena dichiarata)
         (async () => {
