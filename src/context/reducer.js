@@ -1,4 +1,4 @@
-import { DATA_FETCHING_FAIL, DATA_FETCHING_STARTED, DATA_FETCHING_SUCCESS } from "./actions";
+import { DATA_FETCHING_FAIL, DATA_FETCHING_STARTED, DATA_FETCHING_SUCCESS, SVUOTA_CARRELLO } from "./actions";
 
 const reducer = (state, { type, payload }) => {
 
@@ -12,6 +12,14 @@ const reducer = (state, { type, payload }) => {
 
   if (type === DATA_FETCHING_FAIL) {
     return { ...state, isLoading: false, isError: true }
+  }
+
+  if (type === SVUOTA_CARRELLO) {
+    return { ...state, products: [] }
+  }
+
+  if (type === "DELETE_ITEM") {
+    return { ...state, products: state.products.filter(el => el._id !== payload) }
   }
 
   return state;
