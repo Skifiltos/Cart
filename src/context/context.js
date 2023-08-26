@@ -6,7 +6,9 @@ import {
     DATA_FETCHING_SUCCESS,
     // DATA_FETCHING_RESET,
     DELETE_ITEM,
-    SVUOTA_CARRELLO
+    SVUOTA_CARRELLO,
+    AUMENTA_QTY,
+    DIMINUISCE_QTY
 } from "./actions";
 import axios from "axios";
 
@@ -35,10 +37,27 @@ const AppProvider = ({ children }) => {
         })
     }
 
+
+
     // SVUOTA IL CARRELLO
     const deleteAll = () => {
         dispatch({
             type: SVUOTA_CARRELLO
+        })
+    }
+
+    // AUMENTA LA QUANTITA DI UN SINGOLO ELEMENTO
+    const addQty = (id) => {
+        dispatch({
+            type: AUMENTA_QTY,
+            payload: id
+        })
+    }
+
+    const dimQty = (id) => {
+        dispatch({
+            type: DIMINUISCE_QTY,
+            payload: id
         })
     }
 
@@ -69,7 +88,9 @@ const AppProvider = ({ children }) => {
             {
                 ...state,
                 deleteItem,
-                deleteAll
+                deleteAll,
+                addQty,
+                dimQty
             }
         }>
             {children}

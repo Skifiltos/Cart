@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="nav-cart">
           <HiShoppingCart className="cart-icon" />
           <div className="cart-counter">
-            5
+            {0}
           </div>
         </div>
       </header>
