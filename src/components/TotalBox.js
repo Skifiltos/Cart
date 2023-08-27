@@ -19,7 +19,7 @@ const TotalBox = () => {
         <hr />
         <footer className="card-footer" >
           <button className="btn btn-selector" >
-            Ceckout
+            Checkout
           </button>
         </footer>
       </div>

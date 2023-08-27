@@ -1,3 +1,15 @@
+/*
+-prima iterazione di reduce-
+alla prima lettura degli elementi si troverà che: 
+total = 0
+item = obj_1 
+-seconda iterazione di reduce-
+total + item.qty * item.price = 89.99
+item = obj_2
+*/
+
+
+
 const products = [
   {
     _id: "1",

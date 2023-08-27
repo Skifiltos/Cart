@@ -8,7 +8,8 @@ import {
     DELETE_ITEM,
     SVUOTA_CARRELLO,
     AUMENTA_QTY,
-    DIMINUISCE_QTY
+    DIMINUISCE_QTY,
+    COSTO_TOTALE
 } from "./actions";
 import axios from "axios";
 
@@ -83,6 +84,15 @@ const AppProvider = ({ children }) => {
         }
         )()
     }, []);
+
+
+    useEffect(() => {
+        dispatch({
+            type: COSTO_TOTALE
+        })
+    }, [state.products])
+
+
     return (
         <AppContext.Provider value={
             {
