@@ -6,4 +6,5 @@ export const SVUOTA_CARRELLO = "SVUOTA_CARRELLO";
 export const AUMENTA_QTY = "AUMENTA_QTY";
 export const DIMINUISCE_QTY = "DIMINUISCE_QTY";
 export const COSTO_TOTALE = "COSTO_TOTALE";
+export const CONTATORE = "CONTATORE";
 

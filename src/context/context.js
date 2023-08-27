@@ -4,12 +4,12 @@ import {
     DATA_FETCHING_FAIL,
     DATA_FETCHING_STARTED,
     DATA_FETCHING_SUCCESS,
-    // DATA_FETCHING_RESET,
     DELETE_ITEM,
     SVUOTA_CARRELLO,
     AUMENTA_QTY,
     DIMINUISCE_QTY,
-    COSTO_TOTALE
+    COSTO_TOTALE,
+    CONTATORE
 } from "./actions";
 import axios from "axios";
 
@@ -37,8 +37,6 @@ const AppProvider = ({ children }) => {
             payload: id
         })
     }
-
-
 
     // SVUOTA IL CARRELLO
     const deleteAll = () => {
@@ -85,10 +83,13 @@ const AppProvider = ({ children }) => {
         )()
     }, []);
 
-
+    // AGGIORNA IL COSTO TOTALE E IL NUMERO DI ELEMENTI DENTRO IL CARRELLO
     useEffect(() => {
         dispatch({
             type: COSTO_TOTALE
+        })
+        dispatch({
+            type: CONTATORE
         })
     }, [state.products])
 
